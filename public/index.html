@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Google Meet / Zoom clone in a few lines of code. Video Meeting is a video conference website that lets you stay in touch with all your friends." />
-    <meta name="keywords" content="videocall meetings videochat google-meet google-meet-clone zoom-clone meet webrtc webrtc-video webrtc-call screensharing peer-to-peer Real-time" />
-    <meta name="author" content="Sebastien Biollo" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
     <link rel="icon" href="%PUBLIC_URL%/icon.png" />
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Video Meeting</title>
+    <title>Pandating</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163893871-2"></script>
     <script>
@@ -19,9 +19,16 @@
       gtag('config', 'UA-163893871-2');
     </script>
 
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      !function(){const e=document,t=e.documentElement,n=e.body,i=e.getElementById("lights-toggle"),s=window.sr=ScrollReveal();function a(){let e=i.parentNode.querySelector(".label-text");i.checked?(n.classList.remove("lights-off"),e&&(e.innerHTML="dark")):(n.classList.add("lights-off"),e&&(e.innerHTML="light"))}t.classList.remove("no-js"),t.classList.add("js"),window.addEventListener("load",function(){n.classList.add("is-loaded")}),n.classList.contains("has-animations")&&window.addEventListener("load",function(){s.reveal(".feature",{duration:600,distance:"20px",easing:"cubic-bezier(0.215, 0.61, 0.355, 1)",origin:"right",viewFactor:.2})}),i&&(window.addEventListener("load",a),i.addEventListener("change",a))}();
+    </script>
     <div id="root"></div>
   </body>
 </html>
