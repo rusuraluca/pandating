@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Input, Button, IconButton } from '@material-ui/core';
-import { Jumbotron, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import "./Home.css"
 
@@ -26,27 +25,26 @@ class Home extends Component {
 
 	render() {
 		return (
-			<div>
-				<Navbar bg="dark" variant="dark" style={{ textAlign: "center" }}>
-						<Navbar.Brand href="#home">Pandating</Navbar.Brand>
-						<Nav className="center-block">
-							<Nav.Link href="#home">Home</Nav.Link>
-							<Nav.Link href="#features">Features</Nav.Link>
-							<Nav.Link href="#pricing">Pricing</Nav.Link>
-						</Nav>
-				</Navbar>
+			<div className="container2">
+				<div style={{fontSize: "14px", background: "white", width: "10%", textAlign: "center", margin: "auto", marginBottom: "10px"}}>
+					Source code: 
+					<IconButton style={{color: "black"}} onClick={() => window.location.href="https://github.com/0x5eba/Video-Meeting"}>
+						<GitHubIcon />
+					</IconButton>
+				</div>
+				
+				<div>
+					<h1 style={{ fontSize: "45px" }}>Video Meeting</h1>
+					<p style={{ fontWeight: "200" }}>Video conference website that lets you stay in touch with all your friends.</p>
+				</div>
 
-				<Jumbotron>
-					<div>
-						<h1 style={{ fontSize: "45px" }}>Dating is now on videocall!</h1>
-						<p style={{ fontWeight: "200" }}>Now with dating while distancing on most singles’ minds, doing a VIDEO CALL DATE before deciding to meet someone is the new norm and this app is the place for that.</p>
-					</div>
-					<div>
-						<p style={{ margin: 0, fontWeight: "bold", paddingRight: "auto", paddingLeft: "auto" }}>Start or join a date</p>
-						<Button variant="contained" color="primary" onClick={this.join}>Go</Button>
-					</div>
-				</Jumbotron>
-				<div className="container2">
+				<div style={{
+					background: "white", width: "30%", height: "auto", padding: "20px", minWidth: "400px",
+					textAlign: "center", margin: "auto", marginTop: "100px"
+				}}>
+					<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>Start or join a meeting</p>
+					<Input placeholder="URL" onChange={e => this.handleChange(e)} />
+					<Button variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>Go</Button>
 				</div>
 			</div>
 		)
