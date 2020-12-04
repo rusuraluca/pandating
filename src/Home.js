@@ -28,7 +28,7 @@ class Home extends Component {
 		return (
 			<div>
 				<Navbar bg="dark" variant="dark" style={{ textAlign: "center" }}>
-						<Navbar.Brand href="#home">Navbar</Navbar.Brand>
+						<Navbar.Brand href="#home">Pandating</Navbar.Brand>
 						<Nav className="center-block">
 							<Nav.Link href="#home">Home</Nav.Link>
 							<Nav.Link href="#features">Features</Nav.Link>
@@ -38,21 +38,16 @@ class Home extends Component {
 
 				<Jumbotron>
 					<div>
-						<h1 style={{ fontSize: "45px" }}>Video Meeting</h1>
-						<p style={{ fontWeight: "200" }}>Video conference website that lets you stay in touch with all your friends.</p>
+						<h1 style={{ fontSize: "45px" }}>Dating is now on videocall!</h1>
+						<p style={{ fontWeight: "200" }}>Now with dating while distancing on most singles’ minds, doing a VIDEO CALL DATE before deciding to meet someone is the new norm and this app is the place for that.</p>
 					</div>
-				<p>
-					<Button variant="primary">Learn more</Button>
-				</p>
-			</Jumbotron>
-			<div className="container2">
-
-				<div>
-					<p style={{ margin: 0, fontWeight: "bold", paddingRight: "50px" }}>Start or join a meeting</p>
-					<Input placeholder="URL" onChange={e => this.handleChange(e)} />
-					<Button variant="contained" color="primary" onClick={this.join} style={{ margin: "20px" }}>Go</Button>
+					<div>
+						<p style={{ margin: 0, fontWeight: "bold", paddingRight: "auto", paddingLeft: "auto" }}>Start or join a date</p>
+						<Button variant="contained" color="primary" onClick={this.join}>Go</Button>
+					</div>
+				</Jumbotron>
+				<div className="container2">
 				</div>
-			</div>
 			</div>
 		)
 	}
