@@ -572,7 +572,6 @@ class Video extends Component {
 				<div
 					style={{
 						background: 'white',
-						width: '30%',
 						height: 'auto',
 						padding: '20px',
 						minWidth: '400px',
