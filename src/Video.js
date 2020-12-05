@@ -719,25 +719,26 @@ class Video extends Component {
 								</Button>
 								<Intrebari></Intrebari>
 							</div>
-
-							<Row
-								id='main'
-								className='flex-container'
-								style={{ padding: 0 }}>
-								<video
-									id='my-video'
-									ref={this.localVideoref}
-									autoPlay
-									muted
-									style={{
-										borderStyle: 'solid',
-										borderColor: '#bdbdbd',
-										margin: '10px',
-										objectFit: 'fill',
-										width: '100%',
-										height: '100%',
-									}}></video>
-							</Row>
+							<div className='videouri'>
+								<Row
+									id='main'
+									className='flex-container'
+									style={{ padding: 0 }}>
+									<video
+										id='my-video'
+										ref={this.localVideoref}
+										autoPlay
+										muted
+										style={{
+											borderStyle: 'solid',
+											borderColor: '#bdbdbd',
+											margin: '10px',
+											objectFit: 'fill',
+											width: '100%',
+											height: '100%',
+										}}></video>
+								</Row>
+							</div>
 							<div
 								className='btn-down'
 								style={{
