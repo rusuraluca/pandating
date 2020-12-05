@@ -333,7 +333,6 @@ class Video extends Component {
 		let videos = main.querySelectorAll('video');
 		for (let a = 0; a < videos.length; ++a) {
 			videos[a].style.minHeight = minHeight;
-			videos[a].style.setProperty('width', '90vw');
 			videos[a].style.setProperty('height', height);
 		}
 
