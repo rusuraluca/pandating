@@ -633,18 +633,20 @@ class Video extends Component {
 								textAlign: 'center',
 								paddingTop: '40px',
 							}}>
-							<video
-								id='my-video'
-								ref={this.localVideoref}
-								autoPlay
-								muted
-								style={{
-									borderStyle: 'solid',
-									borderColor: '#bdbdbd',
-									objectFit: 'fill',
-									width: '80%',
-									height: 'auto',
-								}}></video>
+							<div className='taiere'>
+								<video
+									id='my-video'
+									ref={this.localVideoref}
+									autoPlay
+									muted
+									style={{
+										borderStyle: 'solid',
+										borderColor: '#bdbdbd',
+										objectFit: 'fill',
+										width: '80%',
+										height: 'auto',
+									}}></video>
+							</div>
 						</div>
 					</div>
 				) : (
