@@ -33,6 +33,7 @@
     "xss": "^1.0.8"
   },
   "scripts": {
+    "build-client": "cd src && yarn build",
     "install-client": "cd src && yarn install",
     "heroku-postbuild": "yarn install-client && yarn build-client",
     "start": "node app.js",
