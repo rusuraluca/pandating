@@ -108,12 +108,6 @@ body {
   }
 }
 
-.flex-container .taiere {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 /** @format */
 .col {
   float: left;
