@@ -730,7 +730,6 @@ class Video extends Component {
 											borderColor: '#bdbdbd',
 											margin: '10px',
 											objectFit: 'fill',
-											width: '100%',
 											height: '100%',
 										}}></video>
 								</Row>
