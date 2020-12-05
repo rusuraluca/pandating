@@ -33,11 +33,13 @@
     "xss": "^1.0.8"
   },
   "scripts": {
+    "install-client": "cd src && yarn install",
+    "heroku-postbuild": "yarn install-client && yarn build-client",
+    "start": "node app.js",
     "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon app.js\" \"NODE_ENV=dev PORT=8000 react-scripts start\"",
-    "start": "NODE_ENV=production  react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
   },
   "eslintConfig": {
     "extends": "react-app"
