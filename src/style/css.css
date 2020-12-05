@@ -66,8 +66,8 @@ body {
   color: black;
 }
 
-.container .timeleft {
-  color: #4022c6;
+.container .timeleft span {
+  color: #dc3d82;
 }
 
 .container .MuiInputBase-root {

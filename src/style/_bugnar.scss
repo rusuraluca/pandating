@@ -60,7 +60,9 @@ body {
 }
 .container {
 	.timeleft {
-		color: $movinchis;
+		span {
+			color: $rozaprins;
+		}
 	}
 	.MuiInputBase-root {
 		color: $movinchis;

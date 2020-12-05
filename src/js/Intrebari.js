@@ -1,14 +1,21 @@
 /** @format */
 import React, { useState, useEffect, useRef } from 'react';
+import io from 'socket.io-client';
+var socket = null;
+const server_url = 'https://pandating.herokuapp.com/';
+socket = io.connect(server_url, { secure: true });
+var connections = {};
+var socketId = null;
 class Example extends React.Component {
 	constructor(props) {
 		super(props);
 		this.afisareintrebare = this.props.afisareintrebare;
 		this.state = {
 			time: {},
-			seconds: 10,
+			seconds: 5,
 			clicked2: false,
 		};
+		this.getIndex = this.props.getIndex;
 		this.clicked = false;
 		this.timer = 0;
 		this.startTimer = this.startTimer.bind(this);
@@ -37,7 +44,12 @@ class Example extends React.Component {
 	}
 
 	startTimer() {
-		if (this.timer == 0 && this.state.seconds > 0) {
+		this.getIndex = this.props.getIndex;
+		if (
+			this.timer == 0 &&
+			this.state.seconds > 0 &&
+			this.getIndex() <= 14
+		) {
 			this.timer = setInterval(this.countDown, 1000);
 		}
 	}
@@ -50,59 +62,37 @@ class Example extends React.Component {
 		});
 
 		if (seconds == 0) {
+			document.querySelector('.timeleftspan').style.color = '#4022c6';
 			clearInterval(this.timer);
-			this.setState({ clicked2: false });
-			document.querySelector('.butonnext').style.background = '#4022c6';
+			this.afisareintrebare = this.props.afisareintrebare;
+			this.timer = 0;
+			setTimeout(() => {
+				this.setState({ seconds: 180, timer: {} });
+				this.startTimer();
+				setTimeout(() => {
+					this.afisareintrebare();
+				}, 1000);
+			}, 1000);
 		}
 	}
 
 	render() {
 		return (
 			<div>
-				<button
-					className='butonnext'
+				<span
+					className='nothinghere'
 					onClick={() => {
-						this.afisareintrebare = this.props.afisareintrebare;
-						if (!this.clicked) {
-							this.afisareintrebare();
-						}
 						this.clicked = true;
 						this.setState({ clicked2: true });
-						if (this.state.seconds == 10) {
-							this.setState({
-								time: this.secondsToTime(10),
-								seconds: 10,
-								allow: false,
-							});
-							this.startTimer();
-							this.question = true;
-							document.querySelector('.butonnext').style.background =
-								'#dc3d82';
-						} else if (this.state.seconds == 0) {
-							this.setState({
-								time: this.secondsToTime(10),
-								seconds: 10,
-							});
-							this.startTimer = this.startTimer.bind(this);
-							this.countDown = this.countDown.bind(this);
-							this.timer = setInterval(this.countDown, 1000);
-							this.render();
-							document.querySelector('.butonnext').style.background =
-								'#dc3d82';
-
-							this.afisareintrebare();
-						} else alert('Just speak lol');
-					}}>
-					{this.clicked ? (
-						<span className='button2'>Next question</span>
-					) : (
-						<span className='button2'>Start</span>
-					)}
-				</button>
+						this.startTimer();
+					}}></span>
 				{this.state.clicked2 ? (
-					<span className='timeleft'>
-						Minutes: {this.state.time.m} Seconds: {this.state.time.s}
-					</span>
+					<div className='timeleft'>
+						<span className='nextQuestion'>Start in : </span>
+						<span className='timeleftspan'>
+							Minutes: {this.state.time.m} Seconds: {this.state.time.s}
+						</span>
+					</div>
 				) : (
 					''
 				)}
@@ -112,6 +102,7 @@ class Example extends React.Component {
 }
 
 function Intrebari() {
+	const allow = useRef(true);
 	const intrebari = [
 		'In acest date trebuie sa raspundeti la niste intrebari.',
 		'Ce descoperire crezi că ar schimba complet viața oamenilor?',
@@ -134,33 +125,50 @@ function Intrebari() {
 		intrebari[0],
 	);
 	const finally_conv = () => {
-		document.querySelector('.button2').textContent = 'Exit';
+		document.querySelector('.nextQuestion').textContent =
+			'Date is ending in : ';
 		console.log('final');
 	};
-	const afisareintrebare = () => {
-		var i, index;
+	const getIndex = () => {
+		let i, index;
 		for (i = 0; i <= 14; i++) {
 			if (intrebare_afisare == intrebari[i]) {
 				index = i;
 				break;
 			}
 		}
-		if (index == 13) {
-			document.querySelector('.button2').textContent = 'Last Question';
-			setTimeout(() => {
-				document.querySelector('.button2').textContent = 'Exit';
-			}, 10000);
-		}
+		return index;
+	};
+	const afisareintrebare = () => {
+		const index = getIndex();
+		if (index != 13)
+			document.querySelector('.nextQuestion').textContent =
+				'Next question in : ';
+		else
+			document.querySelector('.nextQuestion').textContent =
+				'Last Question in : ';
 		if (index <= 14) {
 			setintrebare_afisare(intrebari[index + 1]);
 		} else {
 			finally_conv();
 		}
 	};
+	const pornire = () => {
+		setTimeout(() => {
+			document.querySelector('.nothinghere').click();
+		}, 3000);
+	};
 	const timp = 6000;
 	const timp2 = 1000;
 	const [ok, setOk] = useState(true);
-
+	useEffect(() => {
+		setInterval(() => {
+			if (allow.current && document.querySelector('.unvideo')) {
+				pornire();
+				allow.current = false;
+			}
+		}, 1000);
+	}, []);
 	return (
 		<>
 			<div className='indiv'>
@@ -170,7 +178,9 @@ function Intrebari() {
 							<span className='intrebarespan'>{intrebare_afisare}</span>
 						</div>
 
-						<Example afisareintrebare={afisareintrebare}></Example>
+						<Example
+							afisareintrebare={afisareintrebare}
+							getIndex={getIndex}></Example>
 					</div>
 				</div>
 			</div>

@@ -22,7 +22,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Video.css';
 import style from './style/css.css';
 const server_url = 'https://pandating.herokuapp.com/';
-
+var socketId = null;
 var connections = {};
 const peerConnectionConfig = {
 	iceServers: [
@@ -398,6 +398,7 @@ class Video extends Component {
 
 							video.style.setProperty('height', cssMesure.height);
 							video.setAttribute('data-socket', socketListId);
+							video.classList.add('unvideo');
 							video.srcObject = event.stream;
 							video.autoplay = true;
 							video.playsinline = true;
@@ -726,8 +727,8 @@ class Video extends Component {
 									}}>
 									Send
 								</Button>
-								<Intrebari></Intrebari>
 							</div>
+							<Intrebari></Intrebari>
 							<div className='videouri'>
 								<Row
 									id='main'
@@ -747,6 +748,7 @@ class Video extends Component {
 										}}></video>
 								</Row>
 							</div>
+
 							<div
 								className='btn-down'
 								style={{
