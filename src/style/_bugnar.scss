@@ -87,16 +87,30 @@ body {
 		border-bottom: 2px solid $movinchis;
 		pointer-events: none;
 	}
-}
-.flex-container {
-	@media only screen and (max-width: 600px) {
-		width: 100%;
+	.senddiv {
+		transform: translateY(15px);
+		.sendsus {
+			color: $movinchis;
+		}
+	}
+	#my-video {
+		min-width: 45%;
+		box-sizing: border-box;
+		@media only screen and (max-width: 600px) {
+			min-width: 100%;
+		}
 	}
 }
-.flex-container {
-	.taiere {
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
+.videouri {
+	.flex-container {
+		video {
+			min-width: 45vw;
+			width: 45vw;
+			box-sizing: border-box;
+			@media only screen and (max-width: 600px) {
+				min-width: 90vw;
+				width: 90vw;
+			}
+		}
 	}
 }

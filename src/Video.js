@@ -312,9 +312,7 @@ class Video extends Component {
 	changeCssVideos = (main) => {
 		let widthMain = main.offsetWidth;
 		let minWidth = '30%';
-		if ((widthMain * 30) / 100 < 300) {
-			minWidth = '40vw';
-		}
+
 		let minHeight = '40%';
 
 		let height = String(100 / elms) + '%';
@@ -334,9 +332,7 @@ class Video extends Component {
 
 		let videos = main.querySelectorAll('video');
 		for (let a = 0; a < videos.length; ++a) {
-			videos[a].style.minWidth = minWidth;
 			videos[a].style.minHeight = minHeight;
-			videos[a].style.setProperty('width', width);
 			videos[a].style.setProperty('height', height);
 		}
 
@@ -693,6 +689,11 @@ class Video extends Component {
 						</Modal>
 
 						<div className='container'>
+							<div className='senddiv'>
+								<span className='sendsus'>
+									Send this link to your date to join you !
+								</span>
+							</div>
 							<div style={{ paddingTop: '20px' }}>
 								<Input
 									className='inputlink'
@@ -704,35 +705,35 @@ class Video extends Component {
 										color: 'whitesmoke',
 										marginLeft: '20px',
 										marginTop: '10px',
-										width: '120px',
 										fontSize: '10px',
+										padding: '10px',
 									}}
 									onClick={() => {
 										this.copyUrl();
 									}}>
-									Copy invite link
+									Send
 								</Button>
 								<Intrebari></Intrebari>
 							</div>
-
-							<Row
-								id='main'
-								className='flex-container'
-								style={{ padding: 0 }}>
-								<video
-									id='my-video'
-									ref={this.localVideoref}
-									autoPlay
-									muted
-									style={{
-										borderStyle: 'solid',
-										borderColor: '#bdbdbd',
-										margin: '10px',
-										objectFit: 'fill',
-										width: '100%',
-										height: '100%',
-									}}></video>
-							</Row>
+							<div className='videouri'>
+								<Row
+									id='main'
+									className='flex-container'
+									style={{ padding: 0 }}>
+									<video
+										id='my-video'
+										ref={this.localVideoref}
+										autoPlay
+										muted
+										style={{
+											borderStyle: 'solid',
+											borderColor: '#bdbdbd',
+											margin: '10px',
+											objectFit: 'fill',
+											height: '100%',
+										}}></video>
+								</Row>
+							</div>
 							<div
 								className='btn-down'
 								style={{
