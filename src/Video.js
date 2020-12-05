@@ -312,9 +312,7 @@ class Video extends Component {
 	changeCssVideos = (main) => {
 		let widthMain = main.offsetWidth;
 		let minWidth = '30%';
-		if ((widthMain * 30) / 100 < 300) {
-			minWidth = '90vw';
-		}
+
 		let minHeight = '40%';
 
 		let height = String(100 / elms) + '%';
