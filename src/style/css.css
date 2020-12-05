@@ -111,23 +111,17 @@ body {
   color: #4022c6;
 }
 
-.container #my-video {
-  min-width: 45%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .videouri .flex-container video {
-  min-width: 45vw;
-  width: 45vw;
+  min-width: 40%;
+  width: 40%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 @media only screen and (max-width: 600px) {
   .videouri .flex-container video {
-    min-width: 90vw;
-    width: 90vw;
+    min-width: 85%;
+    width: 85%;
   }
 }
 
