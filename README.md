@@ -1,15 +1,13 @@
-# Video Meeting
+# Pandating
 
-Google Meet / Zoom clone in a few lines of code.
 
-Video Meeting is a video conference website that lets you stay in touch with all your friends.
+Pandating is a video conference website that lets you go on dates.
 
 Developed with ReactJS, Node.js, SocketIO.
 
-![Website](https://i.imgur.com/HhZD01o.jpg)
 
 ### Website
-Try Video Meeting here [video.sebastienbiollo.com](https://video.sebastienbiollo.com)
+Try Pandating here [pandating.herokuapp.com](https://pandating.herokuapp.com/)
 
 
 ### Features
@@ -18,7 +16,7 @@ Try Video Meeting here [video.sebastienbiollo.com](https://video.sebastienbiollo
 - Unlimited users
 - Messaging chat and video streaming in real-time
 - Screen sharing to present documents, slides, and more
-- Everyting is peer-to-peer thanks to webrtc
+- Everything is peer-to-peer thanks to webrtc
 
 
 ### Local setup
