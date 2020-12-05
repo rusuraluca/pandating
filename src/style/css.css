@@ -114,6 +114,7 @@ body {
 .videouri .flex-container {
   overflow: hidden;
   height: 100%;
+  max-width: 50vh;
 }
 
 .videouri .flex-container video {

@@ -1,5 +1,8 @@
-html, body {
-  	height: 100%;
+/** @format */
+
+html,
+body {
+	height: 100%;
 }
 body {
 	margin: 0;
@@ -10,7 +13,6 @@ body {
 .container2 {
 	padding-top: 30px;
 	margin: auto;
-	align-items: center;
 	justify-content: center;
 	text-align: center;
 }
