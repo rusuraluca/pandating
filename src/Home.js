@@ -75,6 +75,7 @@ class Home extends Component {
 								</div>
 							</div>
 							<div className="features-header text-center">
+								<br></br>
 								<h2 className="section-title">How does video call dating work?</h2>
 								<p className="section-paragraph">Lorem ipsum is common placeholder text used to
 									demonstrate the graphic elements of a document or visual presentation.</p>
