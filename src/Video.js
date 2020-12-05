@@ -336,7 +336,7 @@ class Video extends Component {
 			videos[a].style.setProperty('height', height);
 		}
 
-		return { minWidth, minHeight, width, height };
+		return { minHeight, height };
 	};
 
 	connectToSocketServer = () => {
@@ -394,7 +394,6 @@ class Video extends Component {
 							let video = document.createElement('video');
 
 							let css = {
-								minWidth: cssMesure.minWidth,
 								minHeight: cssMesure.minHeight,
 								maxHeight: '100%',
 								margin: '10px',
@@ -404,7 +403,6 @@ class Video extends Component {
 							};
 							for (let i in css) video.style[i] = css[i];
 
-							video.style.setProperty('width', cssMesure.width);
 							video.style.setProperty('height', cssMesure.height);
 							video.setAttribute('data-socket', socketListId);
 							video.srcObject = event.stream;
@@ -572,6 +570,7 @@ class Video extends Component {
 				<div
 					style={{
 						background: 'white',
+						width: '30%',
 						height: 'auto',
 						padding: '20px',
 						minWidth: '400px',
