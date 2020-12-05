@@ -316,16 +316,11 @@ class Video extends Component {
 
 		let height = String(100 / elms) + '%';
 		if (elms === 0 || elms === 1) {
-			width = '100%';
 			height = '100%';
 		} else if (elms === 2) {
-			width = '100%';
 			height = '100%';
 		} else if (elms === 3 || elms === 4) {
-			width = '35%';
 			height = '50%';
-		} else {
-			width = String(100 / elms) + '%';
 		}
 
 		let videos = main.querySelectorAll('video');
