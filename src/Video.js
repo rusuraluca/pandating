@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 import faker from 'faker';
@@ -11,7 +13,6 @@ import ScreenShareIcon from '@material-ui/icons/ScreenShare';
 import StopScreenShareIcon from '@material-ui/icons/StopScreenShare';
 import CallEndIcon from '@material-ui/icons/CallEnd';
 import ChatIcon from '@material-ui/icons/Chat';
-
 import { message } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -19,8 +20,8 @@ import { Row } from 'reactstrap';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Video.css';
-
-const server_url = 'https://pandating.herokuapp.com/' ;
+import style from './style/css.css';
+const server_url = 'https://pandating.herokuapp.com/';
 
 var connections = {};
 const peerConnectionConfig = {
@@ -709,8 +710,8 @@ class Video extends Component {
 									}}>
 									Copy invite link
 								</Button>
+								<Intrebari></Intrebari>
 							</div>
-							<Intrebari></Intrebari>
 
 							<Row
 								id='main'
