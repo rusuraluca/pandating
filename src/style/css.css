@@ -123,6 +123,18 @@ body {
   }
 }
 
+.flex-container video {
+  min-width: 45vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  .flex-container video {
+    min-width: 100vw;
+  }
+}
+
 /** @format */
 .col {
   float: left;
