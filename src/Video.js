@@ -612,11 +612,11 @@ class Video extends Component {
 									fontWeight: 'bold',
 									paddingRight: '50px',
 								}}>
-								Set your username
+								Enter your name
 							</p>
 							<Input
-								placeholder='Username'
-								value={this.state.username}
+								placeholder='Name'
+								//value={this.state.username}
 								onChange={(e) => this.handleUsername(e)}
 							/>
 							<Button
@@ -624,7 +624,7 @@ class Video extends Component {
 								color='primary'
 								onClick={this.connect}
 								style={{ margin: '20px' }}>
-								Connect
+								Start date
 							</Button>
 						</div>
 						<div
