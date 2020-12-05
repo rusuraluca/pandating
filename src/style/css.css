@@ -112,7 +112,7 @@ body {
 }
 
 .container #my-video {
-  min-width: 40%;
+  min-width: 45%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
