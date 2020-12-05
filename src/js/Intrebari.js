@@ -1,6 +1,7 @@
 /** @format */
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import io from 'socket.io-client';
 var socket = null;
 const server_url = 'https://pandating.herokuapp.com/';
@@ -102,8 +103,12 @@ class Example extends React.Component {
 }
 
 function Intrebari() {
+	const istorie = useHistory();
 	const allow = useRef(true);
 	const [ok, setOk] = useState(false);
+	const [show, setShow] = useState(false);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 	const intrebari = [
 		'In acest date trebuie sa raspundeti la niste intrebari.',
 		'What ‘real happiness’ mean to you?',
@@ -123,12 +128,12 @@ function Intrebari() {
 		'If you could go back in time as an observer, no one could see you, and you couldn’t interact with anything, when would you want to go back to?',
 	];
 	const [intrebare_afisare, setintrebare_afisare] = useState(
-		intrebari[12],
+		intrebari[13],
 	);
 	const finally_conv = () => {
 		document.querySelector('.nextQuestion').textContent =
 			'Date is ending in : ';
-		console.log('final');
+		handleShow();
 	};
 	const getIndex = () => {
 		let i, index;
@@ -171,10 +176,7 @@ function Intrebari() {
 			}
 		}, 1000);
 	}, []);
-	const [show, setShow] = useState(false);
 
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
 	return (
 		<>
 			<div className='indiv'>
@@ -190,22 +192,32 @@ function Intrebari() {
 					</div>
 				</div>
 			</div>
-			{/* <Modal show={false} onHide={handleClose}>
+			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
-					<Modal.Title>Modal heading</Modal.Title>
+					<Modal.Title>Date ended !</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>
-					Woohoo, you're reading this text in a modal!
-				</Modal.Body>
+				<Modal.Body>I hope you enjoyed it !</Modal.Body>
 				<Modal.Footer>
-					<Button variant='secondary' onClick={handleClose}>
-						Close
+					<Button
+						variant='secondary'
+						onClick={() => {
+							handleClose();
+							document.querySelector('.nextQuestion').textContent =
+								'Date ended.';
+							document.querySelector('.timeleftspan').textContent = '';
+						}}>
+						Continue the date
 					</Button>
-					<Button variant='primary' onClick={handleClose}>
-						Save Changes
+					<Button
+						variant='primary'
+						onClick={() => {
+							istorie.push('/');
+							handleClose();
+						}}>
+						Leave the date
 					</Button>
 				</Modal.Footer>
-			</Modal> */}
+			</Modal>
 		</>
 	);
 }
