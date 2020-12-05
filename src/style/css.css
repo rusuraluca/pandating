@@ -116,6 +116,12 @@ body {
   height: 100%;
 }
 
+@media only screen and (min-width: 600px) {
+  .videouri .flex-container {
+    max-height: 50vh;
+  }
+}
+
 .videouri .flex-container video {
   min-width: 40%;
   width: 40%;
@@ -128,6 +134,13 @@ body {
   .videouri .flex-container video {
     min-width: 85%;
     width: 85%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .videouri .flex-container video {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 

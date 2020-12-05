@@ -98,6 +98,9 @@ body {
 }
 .videouri {
 	.flex-container {
+		@media only screen and (min-width: 600px) {
+			max-height: 50vh;
+		}
 		overflow: hidden;
 		height: 100%;
 		video {
@@ -108,6 +111,9 @@ body {
 			@media only screen and (max-width: 600px) {
 				min-width: 85%;
 				width: 85%;
+			}
+			@media only screen and (min-width: 600px) {
+				transform: translateY(-50%);
 			}
 		}
 	}
