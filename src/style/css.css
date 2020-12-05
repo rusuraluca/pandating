@@ -66,6 +66,10 @@ body {
   color: black;
 }
 
+.container {
+  max-width: 20000px;
+}
+
 .container .timeleft span {
   color: #dc3d82;
 }
@@ -115,6 +119,12 @@ body {
   overflow: hidden;
   height: 100%;
   max-width: 50vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .videouri .flex-container {
+    max-height: 30vw;
+  }
 }
 
 .videouri .flex-container video {

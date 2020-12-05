@@ -59,6 +59,7 @@ body {
 	}
 }
 .container {
+	max-width: 20000px;
 	.timeleft {
 		span {
 			color: $rozaprins;
@@ -101,6 +102,9 @@ body {
 		overflow: hidden;
 		height: 100%;
 		max-width: 50vh;
+		@media only screen and (max-width: 600px) {
+			max-height: 30vw;
+		}
 		video {
 			min-width: 40%;
 			width: 40%;
