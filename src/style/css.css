@@ -117,12 +117,6 @@ body {
           box-sizing: border-box;
 }
 
-@media only screen and (max-width: 600px) {
-  .container #my-video {
-    min-width: 100%;
-  }
-}
-
 .videouri .flex-container video {
   min-width: 45vw;
   width: 45vw;

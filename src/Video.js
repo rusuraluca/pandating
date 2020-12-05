@@ -311,17 +311,15 @@ class Video extends Component {
 
 	changeCssVideos = (main) => {
 		let widthMain = main.offsetWidth;
-		let minWidth = '30%';
 
 		let minHeight = '40%';
 
 		let height = String(100 / elms) + '%';
-		let width = '';
 		if (elms === 0 || elms === 1) {
 			width = '100%';
 			height = '100%';
 		} else if (elms === 2) {
-			width = '45%';
+			width = '100%';
 			height = '100%';
 		} else if (elms === 3 || elms === 4) {
 			width = '35%';
@@ -608,7 +606,8 @@ class Video extends Component {
 								}}>
 								You have to allow the use of your video and audio 😎
 							</p>
-							<br></br><br></br>
+							<br></br>
+							<br></br>
 							<p
 								style={{
 									margin: 0,
@@ -630,7 +629,8 @@ class Video extends Component {
 								style={{ margin: '20px' }}>
 								Start date
 							</Button>
-							<br></br><br></br>
+							<br></br>
+							<br></br>
 							<p
 								style={{
 									margin: 0,
