@@ -111,6 +111,18 @@ body {
   color: #4022c6;
 }
 
+.container #my-video {
+  min-width: 40%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  .container #my-video {
+    min-width: 100%;
+  }
+}
+
 /** @format */
 .col {
   float: left;

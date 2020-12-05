@@ -93,4 +93,11 @@ body {
 			color: $movinchis;
 		}
 	}
+	#my-video {
+		min-width: 40%;
+		box-sizing: border-box;
+		@media only screen and (max-width: 600px) {
+			min-width: 100%;
+		}
+	}
 }
