@@ -1,11 +1,11 @@
 /** @format */
 import React, { useState, useEffect, useRef } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 import io from 'socket.io-client';
 var socket = null;
 const server_url = 'https://pandating.herokuapp.com/';
 socket = io.connect(server_url, { secure: true });
-var connections = {};
-var socketId = null;
+
 class Example extends React.Component {
 	constructor(props) {
 		super(props);
@@ -67,7 +67,7 @@ class Example extends React.Component {
 			this.afisareintrebare = this.props.afisareintrebare;
 			this.timer = 0;
 			setTimeout(() => {
-				this.setState({ seconds: 180, timer: {} });
+				this.setState({ seconds: 4, timer: {} });
 				this.startTimer();
 				setTimeout(() => {
 					this.afisareintrebare();
@@ -103,26 +103,27 @@ class Example extends React.Component {
 
 function Intrebari() {
 	const allow = useRef(true);
+	const [ok, setOk] = useState(false);
 	const intrebari = [
 		'In acest date trebuie sa raspundeti la niste intrebari.',
-		'Ce descoperire crezi că ar schimba complet viața oamenilor?',
-		'Ce înseamnă pentru tine adevărata fericire?',
-		'Ce vrei să realizezi în viitor?',
-		'Ce-ți place să faci în timpul liber? ',
-		'Ce ai schimba la viața ta și de ce?',
-		'Ce crezi despre tot ceea ce se întâmplă acum în jurul nostru și cum ne va influența asta în viitor?',
-		'Dacă ai avea puterea să schimbi ceva în lume, care ar fi acesta?',
-		'Care este cea mai relaxantă situație în care te-ai putea afla?',
-		'Ești ceea ce ți-ai dorit să fii?',
-		' Cine ești tu atunci nu te vede nimeni?',
-		'Dacă ai putea să te întorci în trecut, ce ai schimba la acesta?',
-		'Unde ai vrea să locuiești și de ce?',
-		'Crezi în talent sau în muncă continuă? Care dintre acestea crezi că te ajută mai mult să realizezi ceea ce îți dorești?',
-		'Care este cel mai frumos lucru care ți s-a întâmplat luna aceasta? Vorbește-mi despre el.',
-		'Îți place să citești cărți? Ce impact au asupra ta?',
+		'What ‘real happiness’ mean to you?',
+		'What discovery do you think would completely change people’s lives?',
+		'What do you want to achieve in the future?',
+		'What do you like doing in your free time?',
+		'What would you like to change in your life and why?',
+		'What do you think about everything that is happening in the world and how this will influence us in our future?',
+		'If you had the power to change one thing in this world, what would you change?',
+		'What’s the most relaxing situation you could imagine? ',
+		'Are you who you wanted to be?',
+		'Who are you when no one is watching?',
+		'When are you the most ‘ you ’ that you can be? In other words, when do you fell most like yourself? ',
+		'Where do you want to live and why?',
+		'What’s the best thing that has happened to you this month?',
+		'Would you like to be famous? (If yes, what would you want to be famous for? If   not, why?)',
+		'If you could go back in time as an observer, no one could see you, and you couldn’t interact with anything, when would you want to go back to?',
 	];
 	const [intrebare_afisare, setintrebare_afisare] = useState(
-		intrebari[0],
+		intrebari[12],
 	);
 	const finally_conv = () => {
 		document.querySelector('.nextQuestion').textContent =
@@ -160,15 +161,20 @@ function Intrebari() {
 	};
 	const timp = 6000;
 	const timp2 = 1000;
-	const [ok, setOk] = useState(true);
+
 	useEffect(() => {
 		setInterval(() => {
 			if (allow.current && document.querySelector('.unvideo')) {
 				pornire();
+				setOk(true);
 				allow.current = false;
 			}
 		}, 1000);
 	}, []);
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 	return (
 		<>
 			<div className='indiv'>
@@ -184,6 +190,22 @@ function Intrebari() {
 					</div>
 				</div>
 			</div>
+			{/* <Modal show={false} onHide={handleClose}>
+				<Modal.Header closeButton>
+					<Modal.Title>Modal heading</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					Woohoo, you're reading this text in a modal!
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant='secondary' onClick={handleClose}>
+						Close
+					</Button>
+					<Button variant='primary' onClick={handleClose}>
+						Save Changes
+					</Button>
+				</Modal.Footer>
+			</Modal> */}
 		</>
 	);
 }

@@ -702,7 +702,7 @@ class Video extends Component {
 							</Modal.Footer>
 						</Modal>
 
-						<div className='container'>
+						<div className='container' style={{ maxWidth: '200000px' }}>
 							<div className='senddiv'>
 								<span className='sendsus'>
 									Send this link to your date to join you !
