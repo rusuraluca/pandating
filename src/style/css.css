@@ -111,9 +111,15 @@ body {
   color: #4022c6;
 }
 
+.videouri .flex-container {
+  overflow: hidden;
+  height: 100%;
+}
+
 .videouri .flex-container video {
   min-width: 40%;
   width: 40%;
+  min-height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }

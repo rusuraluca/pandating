@@ -98,9 +98,12 @@ body {
 }
 .videouri {
 	.flex-container {
+		overflow: hidden;
+		height: 100%;
 		video {
 			min-width: 40%;
 			width: 40%;
+			min-height: 100%;
 			box-sizing: border-box;
 			@media only screen and (max-width: 600px) {
 				min-width: 85%;
