@@ -313,7 +313,7 @@ class Video extends Component {
 		let widthMain = main.offsetWidth;
 		let minWidth = '30%';
 		if ((widthMain * 30) / 100 < 300) {
-			minWidth = '300px';
+			minWidth = '40vw';
 		}
 		let minHeight = '40%';
 
