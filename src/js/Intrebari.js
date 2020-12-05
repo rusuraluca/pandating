@@ -63,7 +63,7 @@ class Example extends React.Component {
 		});
 
 		if (seconds == 0) {
-			document.querySelector('.timeleftspan').style.color = '#4022c6';
+			document.querySelector('.timeleftspan').style.color = '#d5ddfd';
 			clearInterval(this.timer);
 			this.afisareintrebare = this.props.afisareintrebare;
 			this.timer = 0;
@@ -131,8 +131,8 @@ function Intrebari() {
 		intrebari[13],
 	);
 	const finally_conv = () => {
-		document.querySelector('.nextQuestion').textContent =
-			'Date is ending in : ';
+		document.querySelector('.nextQuestion').textContent = 'Date ended.';
+		document.querySelector('.timeleftspan').textContent = '';
 		handleShow();
 	};
 	const getIndex = () => {
@@ -147,12 +147,16 @@ function Intrebari() {
 	};
 	const afisareintrebare = () => {
 		const index = getIndex();
-		if (index != 13)
+		if (index != 13 && index != 15)
 			document.querySelector('.nextQuestion').textContent =
 				'Next question in : ';
 		else
 			document.querySelector('.nextQuestion').textContent =
 				'Last Question in : ';
+		if (index == 14) {
+			document.querySelector('.nextQuestion').textContent =
+				'Date ending in : ';
+		}
 		if (index <= 14) {
 			setintrebare_afisare(intrebari[index + 1]);
 		} else {
@@ -194,22 +198,35 @@ function Intrebari() {
 			</div>
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
-					<Modal.Title>Date ended !</Modal.Title>
+					<Modal.Title style={{ color: '#5e36de' }}>
+						<span>Date ended !</span>
+					</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>I hope you enjoyed it !</Modal.Body>
-				<Modal.Footer>
+				<Modal.Body style={{ color: '#5e36de' }}>
+					<span>I hope you enjoyed it !</span>
+				</Modal.Body>
+				<Modal.Footer style={{ color: '#5e36de' }}>
 					<Button
 						variant='secondary'
+						style={{
+							background: '#d5ddfd',
+							color: '#5e36de',
+							border: '1px solid #5e36de',
+						}}
 						onClick={() => {
 							handleClose();
-							document.querySelector('.nextQuestion').textContent =
-								'Date ended.';
+
 							document.querySelector('.timeleftspan').textContent = '';
 						}}>
 						Continue the date
 					</Button>
 					<Button
 						variant='primary'
+						style={{
+							background: '#d5ddfd',
+							color: '#5e36de',
+							border: '1px solid #5e36de',
+						}}
 						onClick={() => {
 							istorie.push('/');
 							handleClose();

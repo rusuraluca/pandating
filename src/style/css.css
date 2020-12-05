@@ -10,12 +10,12 @@ body {
 }
 
 .indiv span {
-  color: whitesmoke;
+  color: #5e36de;
   font-size: 15px;
 }
 
 .indiv .intrebare1 {
-  background-color: #4022c6;
+  background-color: #d5ddfd;
   padding: 20px;
   margin-bottom: 20px;
   margin-left: 15%;
@@ -40,8 +40,8 @@ body {
   margin-left: 20px;
   border-radius: 20px;
   padding: 10px;
-  background-color: #4022c6;
-  color: whitesmoke;
+  background-color: #d5ddfd;
+  color: #5e36de;
   border: none;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -75,7 +75,7 @@ body {
 }
 
 .container .MuiInputBase-root {
-  color: #4022c6;
+  color: #d5ddfd;
 }
 
 .container .MuiInputBase-root::before {
@@ -86,7 +86,7 @@ body {
   position: absolute;
   -webkit-transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  border-bottom: 1px solid #4022c6;
+  border-bottom: 1px solid #d5ddfd;
   pointer-events: none;
 }
 
@@ -102,7 +102,7 @@ body {
   transition: -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  border-bottom: 2px solid #4022c6;
+  border-bottom: 2px solid #d5ddfd;
   pointer-events: none;
 }
 
@@ -112,7 +112,7 @@ body {
 }
 
 .container .senddiv .sendsus {
-  color: #4022c6;
+  color: #d5ddfd;
 }
 
 .videouri .flex-container {
@@ -139,6 +139,69 @@ body {
     min-width: 85%;
     width: 85%;
   }
+}
+
+.Login-component {
+  z-index: 20000;
+  top: 0;
+  left: 0;
+  height: 120vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(./fundaldate.jpg) no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./fundaldate.jpg) no-repeat center center fixed;
+  overflow: visible;
+}
+
+@media only screen and (max-width: 1100px) {
+  .Login-component {
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Login-component {
+    height: 150vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .Login-component {
+    height: 140vh;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .Login-component {
+    height: 130vh;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .Login-component {
+    height: 125vh;
+  }
+}
+
+.btn-primary {
+  background-attachment: #5e36de;
+}
+
+.modal-content {
+  background-color: #d5ddfd;
+}
+
+.modal-body {
+  border-bottom: 1px solid #5e36de;
+  text-align: center;
+}
+
+.modal-header {
+  border-bottom: 1px solid #5e36de;
+}
+
+.modal-header .modal-title {
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 /** @format */

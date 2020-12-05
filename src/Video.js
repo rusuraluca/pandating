@@ -660,140 +660,142 @@ class Video extends Component {
 						</div>
 					</div>
 				) : (
-					<div className='tot'>
-						<Modal
-							show={this.state.showModal}
-							onHide={this.closeChat}
-							style={{ zIndex: '999999' }}>
-							<Modal.Header closeButton>
-								<Modal.Title>Chat Room</Modal.Title>
-							</Modal.Header>
-							<Modal.Body
-								style={{
-									overflow: 'auto',
-									overflowY: 'auto',
-									height: '400px',
-									textAlign: 'left',
-								}}>
-								{this.state.messages.length > 0 ? (
-									this.state.messages.map((item, index) => (
-										<div key={index} style={{ textAlign: 'left' }}>
-											<p style={{ wordBreak: 'break-all' }}>
-												<b>{item.sender}</b>: {item.data}
-											</p>
-										</div>
-									))
-								) : (
-									<p>No message yet</p>
-								)}
-							</Modal.Body>
-							<Modal.Footer className='div-send-msg'>
-								<Input
-									placeholder='Message'
-									value={this.state.message}
-									onChange={(e) => this.handleMessage(e)}
-								/>
-								<Button
-									variant='contained'
-									color='primary'
-									onClick={this.sendMessage}>
-									Send
-								</Button>
-							</Modal.Footer>
-						</Modal>
-
-						<div className='container' style={{ maxWidth: '200000px' }}>
-							<div className='senddiv'>
-								<span className='sendsus'>
-									Send this link to your date to join you !
-								</span>
-							</div>
-							<div style={{ paddingTop: '20px' }}>
-								<Input
-									className='inputlink'
-									value={window.location.href}
-									disable='true'></Input>
-								<Button
+					<div className='Login-component'>
+						<div className='opacity1'>
+							<Modal
+								show={this.state.showModal}
+								onHide={this.closeChat}
+								style={{ zIndex: '999999' }}>
+								<Modal.Header closeButton>
+									<Modal.Title>Chat Room</Modal.Title>
+								</Modal.Header>
+								<Modal.Body
 									style={{
-										backgroundColor: '#4022c6',
-										color: 'whitesmoke',
-										marginLeft: '20px',
-										marginTop: '10px',
-										fontSize: '10px',
-										padding: '10px',
-									}}
-									onClick={() => {
-										this.copyUrl();
+										overflow: 'auto',
+										overflowY: 'auto',
+										height: '400px',
+										textAlign: 'left',
 									}}>
-									Send
-								</Button>
-							</div>
-							<Intrebari></Intrebari>
-							<div className='videouri'>
-								<Row
-									id='main'
-									className='flex-container'
-									style={{ padding: 0 }}>
-									<video
-										id='my-video'
-										ref={this.localVideoref}
-										autoPlay
-										muted
-										style={{
-											borderStyle: 'solid',
-											borderColor: '#bdbdbd',
-											margin: '10px',
-											objectFit: 'fill',
-											height: '100%',
-										}}></video>
-								</Row>
-							</div>
-
-							<div
-								className='btn-down'
-								style={{
-									backgroundColor: 'whitesmoke',
-									color: 'whitesmoke',
-									textAlign: 'center',
-								}}>
-								<IconButton
-									style={{ color: '#424242' }}
-									onClick={(e) => {
-										this.handleVideo();
-									}}>
-									{this.state.video === true ? (
-										<VideocamIcon />
+									{this.state.messages.length > 0 ? (
+										this.state.messages.map((item, index) => (
+											<div key={index} style={{ textAlign: 'left' }}>
+												<p style={{ wordBreak: 'break-all' }}>
+													<b>{item.sender}</b>: {item.data}
+												</p>
+											</div>
+										))
 									) : (
-										<VideocamOffIcon />
+										<p>No message yet</p>
 									)}
-								</IconButton>
+								</Modal.Body>
+								<Modal.Footer className='div-send-msg'>
+									<Input
+										placeholder='Message'
+										value={this.state.message}
+										onChange={(e) => this.handleMessage(e)}
+									/>
+									<Button
+										variant='contained'
+										color='primary'
+										onClick={this.sendMessage}>
+										Copy
+									</Button>
+								</Modal.Footer>
+							</Modal>
 
-								<IconButton
-									style={{ color: '#f44336' }}
-									onClick={this.handleEndCall}>
-									<CallEndIcon />
-								</IconButton>
+							<div className='container' style={{ maxWidth: '200000px' }}>
+								<div className='senddiv'>
+									<span className='sendsus'>
+										Send this link to your date to join you !
+									</span>
+								</div>
+								<div style={{ paddingTop: '20px' }}>
+									<Input
+										className='inputlink'
+										value={window.location.href}
+										disable='true'></Input>
+									<Button
+										style={{
+											backgroundColor: '#d5ddfd',
+											color: '#5e36de',
+											marginLeft: '20px',
+											marginTop: '10px',
+											fontSize: '10px',
+											padding: '10px',
+										}}
+										onClick={() => {
+											this.copyUrl();
+										}}>
+										Send
+									</Button>
+								</div>
+								<Intrebari></Intrebari>
+								<div className='videouri'>
+									<Row
+										id='main'
+										className='flex-container'
+										style={{ padding: 0 }}>
+										<video
+											id='my-video'
+											ref={this.localVideoref}
+											autoPlay
+											muted
+											style={{
+												borderStyle: 'solid',
+												borderColor: '#bdbdbd',
+												margin: '10px',
+												objectFit: 'fill',
+												height: '100%',
+											}}></video>
+									</Row>
+								</div>
 
-								<IconButton
-									style={{ color: '#424242' }}
-									onClick={(e) => {
-										this.handleAudio();
-										e.preventDefault();
+								<div
+									className='btn-down'
+									style={{
+										backgroundColor: 'whitesmoke',
+										color: '#d5ddfd',
+										textAlign: 'center',
 									}}>
-									{this.state.audio === true ? <MicIcon /> : <MicOffIcon />}
-								</IconButton>
-
-								<Badge
-									badgeContent={this.state.newmessages}
-									max={999}
-									color='secondary'
-									onClick={this.openChat}>
 									<IconButton
 										style={{ color: '#424242' }}
-										onClick={this.openChat}>
-										<ChatIcon />
+										onClick={(e) => {
+											this.handleVideo();
+										}}>
+										{this.state.video === true ? (
+											<VideocamIcon />
+										) : (
+											<VideocamOffIcon />
+										)}
 									</IconButton>
-								</Badge>
+
+									<IconButton
+										style={{ color: '#f44336' }}
+										onClick={this.handleEndCall}>
+										<CallEndIcon />
+									</IconButton>
+
+									<IconButton
+										style={{ color: '#424242' }}
+										onClick={(e) => {
+											this.handleAudio();
+											e.preventDefault();
+										}}>
+										{this.state.audio === true ? <MicIcon /> : <MicOffIcon />}
+									</IconButton>
+
+									<Badge
+										badgeContent={this.state.newmessages}
+										max={999}
+										color='secondary'
+										onClick={this.openChat}>
+										<IconButton
+											style={{ color: '#424242' }}
+											onClick={this.openChat}>
+											<ChatIcon />
+										</IconButton>
+									</Badge>
+								</div>
 							</div>
 						</div>
 					</div>

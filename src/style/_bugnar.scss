@@ -1,6 +1,6 @@
 /** @format */
 
-$movinchis: #4022c6;
+$movinchis: #d5ddfd;
 $mov: #5e36de;
 $rozdeschis: #e27cae;
 $rozaprins: #dc3d82;
@@ -13,7 +13,7 @@ body {
 	margin-top: 40px;
 	margin-bottom: 10px;
 	span {
-		color: whitesmoke;
+		color: $mov;
 		font-size: 15px;
 	}
 	.intrebare1 {
@@ -39,7 +39,7 @@ body {
 		border-radius: 20px;
 		padding: 10px;
 		background-color: $movinchis;
-		color: whitesmoke;
+		color: $mov;
 		border: none;
 		transition: all 0.5s;
 	}
@@ -114,5 +114,46 @@ body {
 				width: 85%;
 			}
 		}
+	}
+}
+.Login-component {
+	z-index: 20000;
+	top: 0;
+	left: 0;
+	height: 120vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+		url(./fundaldate.jpg) no-repeat center center fixed;
+	@media only screen and (max-width: 1100px) {
+		height: 100vh;
+	}
+	@media only screen and (max-width: 600px) {
+		height: 150vh;
+	}
+	@media only screen and (max-width: 500px) {
+		height: 140vh;
+	}
+	@media only screen and (max-width: 400px) {
+		height: 130vh;
+	}
+	@media only screen and (max-width: 380px) {
+		height: 125vh;
+	}
+	overflow: visible;
+}
+.btn-primary {
+	background-attachment: $mov;
+}
+.modal-content {
+	background-color: #d5ddfd;
+}
+.modal-body {
+	border-bottom: 1px solid $mov;
+	text-align: center;
+}
+.modal-header {
+	border-bottom: 1px solid $mov;
+	.modal-title {
+		margin-left: 50%;
+		transform: translateX(-50%);
 	}
 }
