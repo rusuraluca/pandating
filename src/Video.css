@@ -11,6 +11,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	box-sizing: border-box;
+	margin-left: 50%;
+	transform: translateX(-50%);
 }
 
 .container {
