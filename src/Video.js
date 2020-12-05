@@ -311,7 +311,7 @@ class Video extends Component {
 
 	changeCssVideos = (main) => {
 		let widthMain = main.offsetWidth;
-		let minWidth = '30%';
+		let minWidth = '100%';
 		if ((widthMain * 30) / 100 < 300) {
 			minWidth = '40vw';
 		}
@@ -693,6 +693,11 @@ class Video extends Component {
 						</Modal>
 
 						<div className='container'>
+							<div className='senddiv'>
+								<span className='sendsus'>
+									Send this link to your date to join you !
+								</span>
+							</div>
 							<div style={{ paddingTop: '20px' }}>
 								<Input
 									className='inputlink'
@@ -704,13 +709,13 @@ class Video extends Component {
 										color: 'whitesmoke',
 										marginLeft: '20px',
 										marginTop: '10px',
-										width: '120px',
 										fontSize: '10px',
+										padding: '10px',
 									}}
 									onClick={() => {
 										this.copyUrl();
 									}}>
-									Copy invite link
+									Send
 								</Button>
 								<Intrebari></Intrebari>
 							</div>

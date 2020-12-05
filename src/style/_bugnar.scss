@@ -87,9 +87,10 @@ body {
 		border-bottom: 2px solid $movinchis;
 		pointer-events: none;
 	}
-}
-.flex-container {
-	@media only screen and (max-width: 600px) {
-		width: 100%;
+	.senddiv {
+		transform: translateY(15px);
+		.sendsus {
+			color: $movinchis;
+		}
 	}
 }

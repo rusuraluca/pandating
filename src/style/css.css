@@ -102,10 +102,13 @@ body {
   pointer-events: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .flex-container {
-    width: 100%;
-  }
+.container .senddiv {
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+}
+
+.container .senddiv .sendsus {
+  color: #4022c6;
 }
 
 /** @format */

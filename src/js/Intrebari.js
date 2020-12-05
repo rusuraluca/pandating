@@ -1,5 +1,5 @@
 /** @format */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 class Example extends React.Component {
 	constructor(props) {
 		super(props);
@@ -63,12 +63,16 @@ class Example extends React.Component {
 					className='butonnext'
 					onClick={() => {
 						this.afisareintrebare = this.props.afisareintrebare;
+						if (!this.clicked) {
+							this.afisareintrebare();
+						}
 						this.clicked = true;
 						this.setState({ clicked2: true });
 						if (this.state.seconds == 10) {
 							this.setState({
 								time: this.secondsToTime(10),
 								seconds: 10,
+								allow: false,
 							});
 							this.startTimer();
 							this.question = true;
@@ -109,6 +113,7 @@ class Example extends React.Component {
 
 function Intrebari() {
 	const intrebari = [
+		'In acest date trebuie sa raspundeti la niste intrebari.',
 		'Ce descoperire crezi că ar schimba complet viața oamenilor?',
 		'Ce înseamnă pentru tine adevărata fericire?',
 		'Ce vrei să realizezi în viitor?',
@@ -140,13 +145,13 @@ function Intrebari() {
 				break;
 			}
 		}
-		if (index == 12) {
+		if (index == 13) {
 			document.querySelector('.button2').textContent = 'Last Question';
 			setTimeout(() => {
 				document.querySelector('.button2').textContent = 'Exit';
 			}, 10000);
 		}
-		if (index <= 13) {
+		if (index <= 14) {
 			setintrebare_afisare(intrebari[index + 1]);
 		} else {
 			finally_conv();
