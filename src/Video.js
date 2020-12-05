@@ -591,22 +591,32 @@ class Video extends Component {
 						<div
 							style={{
 								background: 'white',
-								width: '30%',
 								height: 'auto',
-								padding: '20px',
 								minWidth: '400px',
-								textAlign: 'center',
 								margin: 'auto',
 								marginTop: '50px',
 								justifyContent: 'center',
+								textAlign: 'center',
+								paddingTop: '40px',
 							}}>
 							<p
 								style={{
 									margin: 0,
 									fontWeight: 'bold',
+									fontSize: '25px',
 									paddingRight: '50px',
 								}}>
-								Enter your name
+								You have to allow the use of your video and audio 😎
+							</p>
+							<br></br><br></br>
+							<p
+								style={{
+									margin: 0,
+									fontWeight: 'bold',
+									fontSize: '25px',
+									paddingRight: '50px',
+								}}>
+								Now enter your name 🤗
 							</p>
 							<Input
 								placeholder='Name'
@@ -620,6 +630,16 @@ class Video extends Component {
 								style={{ margin: '20px' }}>
 								Start date
 							</Button>
+							<br></br><br></br>
+							<p
+								style={{
+									margin: 0,
+									fontWeight: 'bold',
+									fontSize: '25px',
+									paddingRight: '50px',
+								}}>
+								Arrange yourself and start your date! 😝
+							</p>
 						</div>
 						<div
 							style={{
@@ -636,8 +656,8 @@ class Video extends Component {
 									style={{
 										borderStyle: 'solid',
 										borderColor: '#bdbdbd',
-										objectFit: 'fill',
-										width: '80%',
+										objectFit: 'fit',
+										width: '50%',
 										height: 'auto',
 									}}></video>
 							</div>
