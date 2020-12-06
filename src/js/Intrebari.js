@@ -130,9 +130,10 @@ function Intrebari() {
 		'What’s the best thing that has happened to you this month?',
 		'Would you like to be famous? (If yes, what would you want to be famous for? If   not, why?)',
 		'If you could go back in time as an observer, no one could see you, and you couldn’t interact with anything, when would you want to go back to?',
+		'You can speak as long as you want.',
 	];
 	const [intrebare_afisare, setintrebare_afisare] = useState(
-		intrebari[17],
+		intrebari[0],
 	);
 	const finally_conv = () => {
 		document.querySelector('.nextQuestion').textContent = 'Date ended.';
@@ -164,6 +165,7 @@ function Intrebari() {
 		if (index <= 18) {
 			setintrebare_afisare(intrebari[index + 1]);
 		} else {
+			setintrebare_afisare(intrebari[index + 1]);
 			finally_conv();
 		}
 	};
@@ -193,7 +195,8 @@ function Intrebari() {
 			setImg1(imagine1[1]);
 			document.querySelector('.imagine1').classList.add('animate');
 			setTimeout(() => {
-				document.querySelector('.imagine1').classList.remove('animate');
+				if (document.querySelector('.imagine1'))
+					document.querySelector('.imagine1').classList.remove('animate');
 			}, 600);
 		} else setImg1(imagine1[0]);
 		setImg2(imagine2[0]);
@@ -204,7 +207,8 @@ function Intrebari() {
 			setImg2(imagine2[1]);
 			document.querySelector('.imagine2').classList.add('animate');
 			setTimeout(() => {
-				document.querySelector('.imagine2').classList.remove('animate');
+				if (document.querySelector('.imagine2'))
+					document.querySelector('.imagine2').classList.remove('animate');
 			}, 600);
 		} else setImg2(imagine2[0]);
 		setImg1(imagine1[0]);
@@ -215,7 +219,8 @@ function Intrebari() {
 			setImg3(imagine3[1]);
 			document.querySelector('.imagine3').classList.add('animate');
 			setTimeout(() => {
-				document.querySelector('.imagine3').classList.remove('animate');
+				if (document.querySelector('.imagine3'))
+					document.querySelector('.imagine3').classList.remove('animate');
 			}, 600);
 		} else setImg3(imagine3[0]);
 		setImg2(imagine2[0]);
