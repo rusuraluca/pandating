@@ -348,6 +348,10 @@ body {
   width: 25%;
 }
 
+.site-header-inner {
+  z-index: 1;
+}
+
 /** @format */
 .col {
   float: left;

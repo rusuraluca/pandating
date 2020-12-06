@@ -32,13 +32,18 @@ class Home extends Component {
 				<div className='is-boxed has-animations'>
 					<div className='body-wrap boxed-container'>
 						<main>
-							<div className='site-header-inner'>
+							<div
+								className='site-header-inner '
+								style={{
+									background: '#D5DDFD',
+								}}>
 								<div className='brand header-brand'>
 									<Navbar>
 										<Navbar.Brand>
 											<img
+												style={{ height: '120px' }}
 												className='header-logo-image asset-light'
-												src='dist/images/logo-light.svg'
+												src='https://scontent.xx.fbcdn.net/v/t1.15752-0/p280x280/130222781_482227052758916_5860133255541186919_n.png?_nc_cat=110&ccb=2&_nc_sid=ae9488&_nc_ohc=uMlBtZ2bGVgAX-jhly6&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_tp=30&oh=5fa3e74b4b768577910b484b16bbc272&oe=5FF1F61C'
 												alt='Logo'></img>
 										</Navbar.Brand>
 									</Navbar>
