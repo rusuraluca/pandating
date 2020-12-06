@@ -13,7 +13,7 @@ class Example extends React.Component {
 		this.afisareintrebare = this.props.afisareintrebare;
 		this.state = {
 			time: {},
-			seconds: 10,
+			seconds: 2,
 			clicked2: false,
 		};
 		this.getIndex = this.props.getIndex;
@@ -49,7 +49,7 @@ class Example extends React.Component {
 		if (
 			this.timer == 0 &&
 			this.state.seconds > 0 &&
-			this.getIndex() <= 14
+			this.getIndex() <= 18
 		) {
 			this.timer = setInterval(this.countDown, 1000);
 		}
@@ -68,7 +68,7 @@ class Example extends React.Component {
 			this.afisareintrebare = this.props.afisareintrebare;
 			this.timer = 0;
 			setTimeout(() => {
-				this.setState({ seconds: 300, timer: {} });
+				this.setState({ seconds: 2, timer: {} });
 				this.startTimer();
 				setTimeout(() => {
 					this.afisareintrebare();
@@ -114,13 +114,17 @@ function Intrebari() {
 		'What ‘real happiness’ mean to you?',
 		'What discovery do you think would completely change people’s lives?',
 		'What do you want to achieve in the future?',
+		'What would be the title of your autobiography?',
 		'What do you like doing in your free time?',
+		'What is the most ridiculous way in which you’ve hurt yourself?',
 		'What would you like to change in your life and why?',
+		'If you had to live inside the mythical world of a game/TV show/movie, which one would you pick?',
 		'What do you think about everything that is happening in the world and how this will influence us in our future?',
 		'If you had the power to change one thing in this world, what would you change?',
 		'What’s the most relaxing situation you could imagine? ',
 		'Are you who you wanted to be?',
 		'Who are you when no one is watching?',
+		'If you could only use only one Harry Potter spell, which one would you choose?',
 		'When are you the most ‘ you ’ that you can be? In other words, when do you fell most like yourself? ',
 		'Where do you want to live and why?',
 		'What’s the best thing that has happened to you this month?',
@@ -128,7 +132,7 @@ function Intrebari() {
 		'If you could go back in time as an observer, no one could see you, and you couldn’t interact with anything, when would you want to go back to?',
 	];
 	const [intrebare_afisare, setintrebare_afisare] = useState(
-		intrebari[0],
+		intrebari[17],
 	);
 	const finally_conv = () => {
 		document.querySelector('.nextQuestion').textContent = 'Date ended.';
@@ -137,7 +141,7 @@ function Intrebari() {
 	};
 	const getIndex = () => {
 		let i, index;
-		for (i = 0; i <= 14; i++) {
+		for (i = 0; i <= 19; i++) {
 			if (intrebare_afisare == intrebari[i]) {
 				index = i;
 				break;
@@ -147,17 +151,17 @@ function Intrebari() {
 	};
 	const afisareintrebare = () => {
 		const index = getIndex();
-		if (index != 13 && index != 15)
+		if (index != 17 && index != 19)
 			document.querySelector('.nextQuestion').textContent =
 				'Next question in : ';
 		else
 			document.querySelector('.nextQuestion').textContent =
 				'Last Question in : ';
-		if (index == 14) {
+		if (index == 18) {
 			document.querySelector('.nextQuestion').textContent =
 				'Date ending in : ';
 		}
-		if (index <= 14) {
+		if (index <= 18) {
 			setintrebare_afisare(intrebari[index + 1]);
 		} else {
 			finally_conv();
