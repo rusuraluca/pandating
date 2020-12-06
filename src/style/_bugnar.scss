@@ -191,16 +191,33 @@ body {
 	top: 0;
 	left: 0;
 	width: 5%;
-	height: 105vh;
+	height: 100vh;
 	z-index: 0;
+	@media only screen and (min-width: 600px) {
+		height: 150vh;
+	}
+	@media only screen and (max-width: 1000px) {
+		height: 130vh;
+	}
+	@media only screen and (max-width: 500px) {
+		height: 110vh;
+	}
 }
 .fundaldreapta {
 	position: absolute;
 	background-color: #b4c1ef;
 	top: 0;
-	left: 100%;
+	right: 0;
 	width: 5%;
-	height: 105vh;
+	height: 100vh;
 	z-index: 0;
-	transform: translateX(-100%);
+	@media only screen and (min-width: 600px) {
+		height: 150vh;
+	}
+	@media only screen and (max-width: 1000px) {
+		height: 130vh;
+	}
+	@media only screen and (max-width: 500px) {
+		height: 110vh;
+	}
 }

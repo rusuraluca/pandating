@@ -568,7 +568,6 @@ class Video extends Component {
 						width: '30%',
 						height: 'auto',
 						padding: '20px',
-						minWidth: '400px',
 						textAlign: 'center',
 						margin: 'auto',
 						marginTop: '50px',
@@ -589,8 +588,7 @@ class Video extends Component {
 							style={{
 								background: 'white',
 								height: 'auto',
-								minWidth: '400px',
-								margin: 'auto',
+								margin: '50px 5vw 5vw',
 								marginTop: '50px',
 								justifyContent: 'center',
 								textAlign: 'center',
@@ -601,7 +599,6 @@ class Video extends Component {
 									margin: 0,
 									fontWeight: 'bold',
 									fontSize: '25px',
-									paddingRight: '50px',
 								}}>
 								You have to allow the use of your video and audio 😎
 							</p>
@@ -612,7 +609,6 @@ class Video extends Component {
 									margin: 0,
 									fontWeight: 'bold',
 									fontSize: '25px',
-									paddingRight: '50px',
 								}}>
 								Now enter your name 🤗
 							</p>
@@ -635,7 +631,6 @@ class Video extends Component {
 									margin: 0,
 									fontWeight: 'bold',
 									fontSize: '25px',
-									paddingRight: '50px',
 								}}>
 								Arrange yourself and start your date! 😝
 							</p>

@@ -268,20 +268,54 @@ body {
   top: 0;
   left: 0;
   width: 5%;
-  height: 105vh;
+  height: 100vh;
   z-index: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .fundalstanga {
+    height: 150vh;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .fundalstanga {
+    height: 130vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .fundalstanga {
+    height: 110vh;
+  }
 }
 
 .fundaldreapta {
   position: absolute;
   background-color: #b4c1ef;
   top: 0;
-  left: 100%;
+  right: 0;
   width: 5%;
-  height: 105vh;
+  height: 100vh;
   z-index: 0;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+}
+
+@media only screen and (min-width: 600px) {
+  .fundaldreapta {
+    height: 150vh;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .fundaldreapta {
+    height: 130vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .fundaldreapta {
+    height: 110vh;
+  }
 }
 
 /** @format */
