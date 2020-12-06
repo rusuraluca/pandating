@@ -185,17 +185,22 @@ class Home extends Component {
 						</main>
 
 						<div style={{ backgroundColor: '#F0F0F0' }}>
+							<div className='footercontent group'>
+								<img
+									className='inimafooter'
+									src='https://scontent.fias1-1.fna.fbcdn.net/v/t1.15752-9/129486737_860643514708489_2489845482878166188_n.png?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_ohc=lLK1jhYaa-4AX85mL8d&_nc_oc=AQkUKv7ctu_hAVyc6I-2D6BcHmQN8se9q2OAX8YPxA1IE3e_dNX2IzuH3FNtzXbY6oU&_nc_ht=scontent.fias1-1.fna&oh=dbb241f6efabfc0c2ba48bcba89eba52&oe=5FF1F4C2'
+									alt='heart'
+								/>
+								<img
+									src='https://scontent.fias1-1.fna.fbcdn.net/v/t1.15752-9/129267679_869537930513202_4201963194097441640_n.png?_nc_cat=110&ccb=2&_nc_sid=ae9488&_nc_ohc=N_Anps5ULXkAX9g3-06&_nc_ht=scontent.fias1-1.fna&oh=63a781754fbd18a04d39ac81bcfd6681&oe=5FF16B2F'
+									alt='nothing'
+								/>
+							</div>
 							<MDBFooter color='blue' className='font-small pt-4 mt-4'>
 								<MDBContainer fluid className='text-center text-md-left'>
 									<MDBRow>
 										<MDBCol md='3'></MDBCol>
-										<MDBCol md='6'>
-											<h5 className='title'>Footer Content</h5>
-											<p>
-												Here you can use rows and columns here to organize your
-												footer content.
-											</p>
-										</MDBCol>
+										<MDBCol md='6'></MDBCol>
 										<MDBCol md='3'></MDBCol>
 									</MDBRow>
 								</MDBContainer>

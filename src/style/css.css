@@ -318,6 +318,36 @@ body {
   }
 }
 
+.footercontent {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50%;
+  -webkit-transform: translateX(50%) translateY(100px);
+          transform: translateX(50%) translateY(100px);
+  white-space: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .footercontent {
+    width: 90%;
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    margin-left: 5%;
+  }
+}
+
+.footercontent img {
+  width: 75%;
+  float: left;
+}
+
+.footercontent .inimafooter {
+  width: 25%;
+}
+
 /** @format */
 .col {
   float: left;
