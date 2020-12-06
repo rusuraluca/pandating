@@ -13,7 +13,7 @@ class Example extends React.Component {
 		this.afisareintrebare = this.props.afisareintrebare;
 		this.state = {
 			time: {},
-			seconds: 2,
+			seconds: 15,
 			clicked2: false,
 		};
 		this.getIndex = this.props.getIndex;
@@ -68,7 +68,7 @@ class Example extends React.Component {
 			this.afisareintrebare = this.props.afisareintrebare;
 			this.timer = 0;
 			setTimeout(() => {
-				this.setState({ seconds: 2, timer: {} });
+				this.setState({ seconds: 300, timer: {} });
 				this.startTimer();
 				setTimeout(() => {
 					this.afisareintrebare();
