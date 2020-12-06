@@ -696,7 +696,7 @@ class Video extends Component {
 										variant='contained'
 										color='primary'
 										onClick={this.sendMessage}>
-										Copy
+										Send
 									</Button>
 								</Modal.Footer>
 							</Modal>
@@ -731,7 +731,7 @@ class Video extends Component {
 													this.copyUrl();
 												}
 											}}>
-											Send
+											Copy
 										</Button>
 									)}
 								</div>
