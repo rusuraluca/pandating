@@ -185,3 +185,22 @@ body {
 		transform: scale(1);
 	}
 }
+.fundalstanga {
+	position: absolute;
+	background-color: #b4c1ef;
+	top: 0;
+	left: 0;
+	width: 5%;
+	height: 105vh;
+	z-index: 0;
+}
+.fundaldreapta {
+	position: absolute;
+	background-color: #b4c1ef;
+	top: 0;
+	left: 100%;
+	width: 5%;
+	height: 105vh;
+	z-index: 0;
+	transform: translateX(-100%);
+}

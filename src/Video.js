@@ -583,7 +583,8 @@ class Video extends Component {
 			<div>
 				{this.state.askForUsername === true ? (
 					<div>
-						{' '}
+						<div className='fundalstanga'></div>
+						<div className='fundaldreapta'></div>{' '}
 						<div
 							style={{
 								background: 'white',

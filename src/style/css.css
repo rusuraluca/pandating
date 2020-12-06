@@ -262,6 +262,28 @@ body {
   }
 }
 
+.fundalstanga {
+  position: absolute;
+  background-color: #b4c1ef;
+  top: 0;
+  left: 0;
+  width: 5%;
+  height: 105vh;
+  z-index: 0;
+}
+
+.fundaldreapta {
+  position: absolute;
+  background-color: #b4c1ef;
+  top: 0;
+  left: 100%;
+  width: 5%;
+  height: 105vh;
+  z-index: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
 /** @format */
 .col {
   float: left;
