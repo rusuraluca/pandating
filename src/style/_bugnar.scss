@@ -155,5 +155,33 @@ body {
 	.modal-title {
 		margin-left: 50%;
 		transform: translateX(-50%);
+		white-space: nowrap;
+	}
+}
+.imagini {
+	margin-top: 20px;
+	img {
+		cursor: pointer;
+		@media only screen and (min-width: 600px) {
+			width: 50%;
+			transform: translateX(50%);
+		}
+	}
+}
+.animate {
+	animation: animatieinima 0.5s;
+}
+@keyframes animatieinima {
+	0% {
+		opacity: 0;
+		transform: scale(0.7);
+	}
+	66% {
+		transform: scale(1.5);
+		opacity: 0.66;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
 	}
 }

@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import io from 'socket.io-client';
 import faker from 'faker';
 import Intrebari from './js/Intrebari';
@@ -44,6 +44,7 @@ class Video extends Component {
 		this.audioAvailable = false;
 
 		this.state = {
+			sended: true,
 			video: false,
 			audio: false,
 			screen: false,
@@ -577,6 +578,7 @@ class Video extends Component {
 				</div>
 			);
 		}
+
 		return (
 			<div>
 				{this.state.askForUsername === true ? (
@@ -710,24 +712,32 @@ class Video extends Component {
 									</span>
 								</div>
 								<div style={{ paddingTop: '20px' }}>
-									<Input
-										className='inputlink'
-										value={window.location.href}
-										disable='true'></Input>
-									<Button
-										style={{
-											backgroundColor: '#d5ddfd',
-											color: '#5e36de',
-											marginLeft: '20px',
-											marginTop: '10px',
-											fontSize: '10px',
-											padding: '10px',
-										}}
-										onClick={() => {
-											this.copyUrl();
-										}}>
-										Send
-									</Button>
+									{this.state.sended && (
+										<Input
+											className='inputlink '
+											value={window.location.href}
+											disable='true'></Input>
+									)}
+									{this.state.sended && (
+										<Button
+											className='butonsend'
+											style={{
+												backgroundColor: '#d5ddfd',
+												color: '#5e36de',
+												marginLeft: '20px',
+												marginTop: '10px',
+												fontSize: '10px',
+												padding: '10px',
+											}}
+											onClick={() => {
+												if (this.state.sended) {
+													this.setState({ sended: false });
+													this.copyUrl();
+												}
+											}}>
+											Send
+										</Button>
+									)}
 								</div>
 								<Intrebari></Intrebari>
 								<div className='videouri'>
