@@ -178,7 +178,7 @@ class Home extends Component {
 													</h3>
 													<p class='text-sm mb-0'>
 														Have fun! Oh and one more thing, don't forget the
-														feedback at the end winky face
+														feedback at the end
 													</p>
 												</div>
 											</div>
