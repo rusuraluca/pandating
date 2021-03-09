@@ -1,8 +1,8 @@
 {
-  "short_name": "Pandating",
-  "name": "Pandating",
-  "start_url": "https://pandating.herokuapp.com/",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+	"short_name": "Pandating",
+	"name": "Pandating",
+	"start_url": "https://pandating.herokuapp.com/",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
 }
